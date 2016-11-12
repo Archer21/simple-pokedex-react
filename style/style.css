@@ -1,0 +1,42 @@
+@import './normalize.css';
+
+.Header-title {
+    color: #919191;
+}
+
+.PokeApp-searchContainer {
+    background-color: #313131;
+}
+
+.PokeApp-headerContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.SearchPokemon {
+    color: #FFFFFF;
+    padding: .5em 0;
+    margin: 0 10%;
+}
+
+.SearchPokemon-title {
+    margin: 0;
+    padding: .5em 0;
+}
+
+.SearchBox-input {
+    padding: .5em;
+    width: 45%;
+    margin-right: 2em;
+}
+
+.SearchBox-button {
+    padding: .7em;
+    border: none;
+    border-radius: .5em;
+    background-color: darkorange;
+}
+
+.SearchPokemon-text {
+    width: 60%;
+}

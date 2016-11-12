@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import App from './components/app';
+import PokeApp from './containers/PokeApp'
 
 ReactDOM.render(
-  <App />
-  , document.querySelector('.container'));
+  <PokeApp />
+  , document.getElementById('container'))
