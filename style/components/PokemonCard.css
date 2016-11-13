@@ -1,0 +1,48 @@
+
+.PokemonCard {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.PokemonCard-body {
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+.PokemonCard-image {
+    width: 100%;
+}
+
+.PokemonCard-actions {
+    background-color: white;
+    padding: 1em .5em;
+    border-radius: 4em 4em 0px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.PokemonCard-action {
+    padding: .5em;
+    font-size: 1.2em;
+}
+
+.PokemonCard-number {
+    color: #C1C4D2;
+}
+
+.PokemonCard-name {
+    font-size: 1.4em;
+    margin: .5em 0;
+}
+
+.PokemonCard-type:not(:last-child) {
+    margin-right: .5em;
+}
+
+.PokemonCard-type {
+    padding: .2em 1em;
+    background-color: darkorange;
+    color: white;
+    border-radius: .3em;
+    font-size: .9em;
+}

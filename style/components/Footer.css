@@ -1,0 +1,31 @@
+.Footer {
+    text-align: center;
+    background-color: #1F1F1F;
+}
+
+.Footer-title {
+    color: white;
+    padding: 1em 0;
+}
+
+.Footer-info {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.Footer-link {
+    color: #616161;
+    padding: .3em 0;
+    display: block;
+}
+
+.Footer-link:hover {
+    color: white;
+}
+
+.Footer-copyright {
+    color: white;
+    padding: 1em 0;
+    display: block;
+}

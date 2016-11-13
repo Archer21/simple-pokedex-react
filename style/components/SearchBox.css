@@ -1,0 +1,12 @@
+.SearchBox-input {
+    padding: .5em;
+    width: 45%;
+    margin-right: 2em;
+}
+
+.SearchBox-button {
+    padding: .7em;
+    border: none;
+    border-radius: .5em;
+    background-color: darkorange;
+}

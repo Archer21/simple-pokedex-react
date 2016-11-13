@@ -1,0 +1,8 @@
+.PokemonList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.PokemonList-pokemonCardContainer {
+    width: 25%;
+}

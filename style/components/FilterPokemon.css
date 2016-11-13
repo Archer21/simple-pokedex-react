@@ -1,0 +1,17 @@
+.FilterPokemon {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+}
+
+.FilterPokemon-orderSelection {
+    width: 35%;
+    padding: .5em;
+    background-color: #313131;
+    color: white;
+    border-radius: 0.3em;
+}
+
+.FilterPokemon-option {
+    padding: .5em;
+}
