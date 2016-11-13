@@ -6,7 +6,9 @@ class PokemonCard extends React.Component {
       <article className="PokemonCard">
 
         <div className="PokemonCard-body">
-          <img src="./../../public/006.png" alt="charizard" className="PokemonCard-image"/>
+          <a href="#" className="PokemonCard-imageContainer">
+            <img src="./../../public/006.png" alt="charizard" className="PokemonCard-image"/>
+          </a>
           <div className="PokemonCard-actions">
             <a href="#" className="PokemonCard-action">+</a>
             <a href="#" className="PokemonCard-action">*</a>
