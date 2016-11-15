@@ -1,0 +1,345 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+progress {
+  vertical-align: baseline;
+}
+template,
+[hidden] {
+  display: none;
+}
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+a:active,
+a:hover {
+  outline-width: 0;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+optgroup {
+  font-weight: bold;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.button {
+  background-color: #30a7d7;
+  padding: 0.7em;
+  width: 35%;
+  color: #fff;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.PokeApp-searchContainer {
+  background-color: #313131;
+}
+.PokeApp-headerContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+.PokeApp-filterPokemonContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+.PokeApp-pokemonListContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+.PokeApp-loadPokemon {
+  margin: 2em auto;
+  width: 80%;
+  text-align: center;
+}
+.Header {
+  padding: 1em 0;
+}
+.Header-title {
+  color: #919191;
+}
+.SearchPokemon {
+  color: #fff;
+  padding: 0.5em 0;
+  margin: 0 10%;
+}
+.SearchPokemon-title {
+  margin: 0;
+  padding: 0.5em 0;
+}
+.SearchPokemon-text {
+  width: 60%;
+}
+.SearchBox-input {
+  padding: 0.5em;
+  width: 45%;
+  margin-right: 2em;
+}
+.SearchBox-button {
+  padding: 0.7em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #ff8c00;
+}
+.FilterPokemon {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+.FilterPokemon-orderSelection {
+  width: 35%;
+  padding: 0.5em;
+  background-color: #313131;
+  color: #fff;
+  border-radius: 0.3em;
+}
+.FilterPokemon-option {
+  padding: 0.5em;
+}
+.PokemonList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.PokemonList-pokemonCardContainer {
+  width: 25%;
+}
+.PokemonCard {
+  padding: 1em;
+  box-sizing: border-box;
+}
+.PokemonCard-body {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+.PokemonCard-image {
+  width: 100%;
+}
+.PokemonCard-actions {
+  background-color: #fff;
+  padding: 1em 0.5em;
+  border-radius: 4em 4em 0px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.PokemonCard-action {
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+.PokemonCard-number {
+  color: #c1c4d2;
+}
+.PokemonCard-name {
+  font-size: 1.4em;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+}
+.PokemonCard-type:not(:last-child) {
+  margin-right: 0.5em;
+}
+.PokemonCard-type {
+  padding: 0.2em 1em;
+  background-color: #ff8c00;
+  color: #fff;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+}
+.Footer {
+  text-align: center;
+  background-color: #1f1f1f;
+}
+.Footer-title {
+  color: #fff;
+  padding: 1em 0;
+}
+.Footer-info {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+.Footer-link {
+  color: #616161;
+  padding: 0.3em 0;
+  display: block;
+}
+.Footer-linkhover {
+  color: #fff;
+}
+.Footer-copyright {
+  color: #fff;
+  padding: 1em 0;
+  display: block;
+}

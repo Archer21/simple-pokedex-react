@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import Header from './../components/Header'
 import SearchPokemon from './../components/SearchPokemon'
@@ -7,10 +8,43 @@ import PokemonList from './../components/PokemonList'
 import Footer from './../components/Footer'
 
 
-export default class App extends Component {
+class PokeApp extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      pokemonList: []
+    }
+  }
+
+  componentDidMount () {
+    axios.get('pokemon/list')
+    .then(response => {
+      // debugger
+      let pokeList = response.data.map(data => {
+        // let pokeInfo = JSON.parse(data)
+        let pokemon = {
+          name: data.name,
+          number: data.number,
+          image: data.images.front_default,
+          types: data.types.map(item => {
+            return item.type.name
+          })
+        }
+        return pokemon
+      })
+
+      this.setState({
+        pokemonList: pokeList
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
   render() {
     return (
-      <div class="PokeApp">
+      <div className="PokeApp">
 
         <div className="PokeApp-headerContainer">
           <Header />
@@ -25,7 +59,7 @@ export default class App extends Component {
         </div>
 
         <div className="PokeApp-pokemonListContainer">
-          <PokemonList />
+          <PokemonList pokemonList={this.state.pokemonList} />
         </div>
         
         <div className="PokeApp-loadPokemon">
@@ -40,3 +74,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default PokeApp
