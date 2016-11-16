@@ -8,7 +8,11 @@ import PokemonCard from './PokemonCard'
 class PokemonList extends React.Component {
 
   render () {
-    
+
+    if (this.props.pokemonList === 0) {
+      return <div>Loading...</div>
+    }
+      
     let pokemonList = this.props.pokemonList.map((pokemon) => {
       return (
         <div key={uuid.v1()} className="PokemonList-pokemonCardContainer">

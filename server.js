@@ -8,25 +8,24 @@ const Pokedex = require('pokedex-promise-v2')
 const app = express()
 const P = new Pokedex()
 
+const limit = 11
+
 app.use(express.static(`public`))
 
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/index.html`)
 })
 
-app.get('/pokemon/list', (req, res) => {
+// return a list off pokemon
+app.get('/pokemon/list/:offset', (req, res) => {
   var interval = {
-    limit: 11,
-    offset: 1
+    limit: limit,
+    offset: req.params.offset
   }
   P.getPokemonsList(interval)
   .then(function (response) {
     let results = response.results.map(function (pokemon) {
       return P.getPokemonByName(pokemon.name)
-        // .then(data => {
-        //   return request(data.forms[0].url)
-        // })
-
       .then(function (data) {
         let pokemonInfo = {
           number: data.id,

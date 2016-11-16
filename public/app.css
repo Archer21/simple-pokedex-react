@@ -206,6 +206,42 @@ a {
   border-radius: 0.3em;
   cursor: pointer;
 }
+.grass {
+  background-color: #9bcc50;
+}
+.poison {
+  background-color: #b97fc9;
+}
+.fire {
+  background-color: #fd7d24;
+}
+.flying {
+  background-color: #3dc7ef;
+}
+.water {
+  background-color: #4592c4;
+}
+.bug {
+  background-color: #749a3d;
+}
+.normal {
+  background-color: #a4acaf;
+}
+.electric {
+  background-color: #eed535;
+}
+.ground {
+  background-color: #ab9842;
+}
+.fairy {
+  background-color: #fdb9e9;
+}
+.fighting {
+  background-color: #d56723;
+}
+.dragon {
+  background-color: #f16e57;
+}
 .PokeApp-searchContainer {
   background-color: #313131;
 }
@@ -305,14 +341,13 @@ a {
 .PokemonCard-name {
   font-size: 1.4em;
   margin: 0.5em 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .PokemonCard-type:not(:last-child) {
   margin-right: 0.5em;
 }
 .PokemonCard-type {
   padding: 0.2em 1em;
-  background-color: #ff8c00;
   color: #fff;
   border-radius: 0.3em;
   font-size: 0.9em;

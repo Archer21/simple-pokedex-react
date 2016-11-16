@@ -1,11 +1,13 @@
 import React from 'react'
 import uuid from 'uuid'
+import classNames from 'classnames'
 
 class PokemonCard extends React.Component {
   render () {
 
     let types = this.props.pokemon.types.map(type => {
-      return <a key={uuid.v1()} href="#" className="PokemonCard-type">{type}</a>
+      let cardClass = classNames('PokemonCard-type', type)
+      return <a key={uuid.v1()} href="#"  className={cardClass} style={{backgroundColor: type}}>{type}</a>
     })
     return (
       <article className="PokemonCard">
