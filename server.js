@@ -10,6 +10,17 @@ const P = new Pokedex()
 
 const limit = 11
 
+function getPokemonInfo (data) {
+  let pokemonInfo = {
+    number: data.id,
+    name: data.name,
+    images: data.sprites,
+    types: data.types
+  }
+
+  return pokemonInfo
+}
+
 app.use(express.static(`public`))
 
 app.get('/', (req, res) => {
@@ -27,13 +38,7 @@ app.get('/pokemon/list/:offset', (req, res) => {
     let results = response.results.map(function (pokemon) {
       return P.getPokemonByName(pokemon.name)
       .then(function (data) {
-        let pokemonInfo = {
-          number: data.id,
-          name: data.name,
-          images: data.sprites,
-          types: data.types
-        }
-        return pokemonInfo
+        return getPokemonInfo(data)
       })
     })
 
@@ -44,6 +49,16 @@ app.get('/pokemon/list/:offset', (req, res) => {
   })
   .catch(function (err) {
     console.log(err)
+  })
+})
+
+app.get('/pokemon/:id', (req, res) => {
+  P.getPokemonByName(req.params.id)
+  .then(function (data) {
+    res.json(getPokemonInfo(data))
+  })
+  .catch(function (error) {
+    console.log('There was an ERROR: ', error)
   })
 })
 

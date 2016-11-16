@@ -5,7 +5,6 @@ import Header from './../components/Header'
 import SearchPokemon from './../components/SearchPokemon'
 import FilterPokemon from './../components/FilterPokemon'
 import PokemonList from './../components/PokemonList'
-import LoadMore from './../components/LoadMore'
 import Footer from './../components/Footer'
 
 
@@ -13,6 +12,7 @@ class PokeApp extends Component {
   constructor (props) {
     super(props)
     this.onLoadMoreClick = this.onLoadMoreClick.bind(this)
+    this.handleInputSearch = this.handleInputSearch.bind(this)
     this.state = {
       pokemonList: []
     }
@@ -31,9 +31,35 @@ class PokeApp extends Component {
       }
       return pokemon
     })
-    
+
     return list
-  } 
+  }
+
+  getPokemon (info) {
+    let pokemon = {
+      name: info.data.name,
+      number: info.data.number,
+      image: info.data.images.front_default,
+      types: info.data.types.map(item => {
+        return item.type.name
+      })
+    }
+    return pokemon
+  }
+
+  handleInputSearch (id) {
+    axios.get(`/pokemon/${id}`)
+      .then(info => {
+        let pokemon = [this.getPokemon(info)]
+        
+        this.setState({
+          pokemonList: pokemon
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   onLoadMoreClick (e) {
     let offset = this.state.pokemonList.length + 1
@@ -73,7 +99,7 @@ class PokeApp extends Component {
         </div>
 
         <div className="PokeApp-searchContainer">
-          <SearchPokemon />
+          <SearchPokemon handleInputSearch={this.handleInputSearch} />
         </div>
 
         <div className="PokeApp-filterPokemonContainer">
