@@ -12,7 +12,8 @@ class PokeApp extends Component {
   constructor (props) {
     super(props)
     this.onLoadMoreClick = this.onLoadMoreClick.bind(this)
-    this.handleInputSearch = this.handleInputSearch.bind(this)
+    this.getPokemonByIdOrName = this.getPokemonByIdOrName.bind(this)
+    this.sortList = this.sortList.bind(this)
     this.state = {
       pokemonList: []
     }
@@ -35,7 +36,7 @@ class PokeApp extends Component {
     return list
   }
 
-  getPokemon (info) {
+  getPokemonInfo (info) {
     let pokemon = {
       name: info.data.name,
       number: info.data.number,
@@ -47,10 +48,10 @@ class PokeApp extends Component {
     return pokemon
   }
 
-  handleInputSearch (id) {
+  getPokemonByIdOrName (id) {
     axios.get(`/pokemon/${id}`)
       .then(info => {
-        let pokemon = [this.getPokemon(info)]
+        let pokemon = [this.getPokemonInfo(info)]
         
         this.setState({
           pokemonList: pokemon
@@ -63,6 +64,7 @@ class PokeApp extends Component {
 
   onLoadMoreClick (e) {
     let offset = this.state.pokemonList.length + 1
+
     axios.get(`pokemon/list/${offset}`)
     .then(response => {
       let pokeList = this.getPokemonList(response)
@@ -75,10 +77,15 @@ class PokeApp extends Component {
     })
   }
 
+  sortList (sortedList) {
+    this.setState({
+      pokemonList: sortedList
+    })
+  }
+
   componentDidMount () {
     axios.get(`pokemon/list/1`)
     .then(response => {
-      // debugger
       let pokeList = this.getPokemonList(response)
 
       this.setState({
@@ -99,11 +106,14 @@ class PokeApp extends Component {
         </div>
 
         <div className="PokeApp-searchContainer">
-          <SearchPokemon handleInputSearch={this.handleInputSearch} />
+          <SearchPokemon handleInputSearch={this.getPokemonByIdOrName} />
         </div>
 
         <div className="PokeApp-filterPokemonContainer">
-          <FilterPokemon />
+          <FilterPokemon
+            pokemonList={this.state.pokemonList}
+            getRandomPokemon={this.getPokemonByIdOrName}
+            sortList={this.sortList}/>
         </div>
 
         <div className="PokeApp-pokemonListContainer">
